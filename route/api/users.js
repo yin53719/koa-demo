@@ -8,9 +8,12 @@ const logger = log4js.getLogger('http');
 router.get('/list',async (ctx)=>{
     let username = common.getUrlparms(ctx.url,'name');
     let page=common.getUrlparms(ctx.url,'page');
-    let spage=(page-1)*10;
-    let epage=page*10;
-    let sql = `SELECT a.username as name,sex,age,birth,addr,id  FROM user as a WHERE username LIKE '%${username}%' limit ${spage},${epage}`;
+    let limit=common.getUrlparms(ctx.url,'limit');
+    let spage=(page-1)*10+1;
+    if(page==1){
+        spage=0;
+    }
+    let sql = `SELECT a.username as name,sex,age,birth,addr,id  FROM user as a WHERE username LIKE '%${username}%' limit ${spage},${limit}`;
     let users = await query.selectAllData(sql);
     let total = await query.selectAllData(`SELECT count(username) as total FROM user`);
     ctx.body={total:total[0].total,users:users};
