@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2">
+  <title>上海胜微</title> 
+  <meta name="keywords" content="上海胜微文化传媒有限公司" /> 
+  <meta name="description" content="专业服务影视制作，微电影拍摄，企业广告片拍摄，动画视频制作等视频业务，也致力于互联网技术相关服务，会展服务" /> 
+  <link href="//swtiny.yinzhongchang.cn/assets/css/css.css" rel="stylesheet" type="text/css">
+  <link href="//swtiny.yinzhongchang.cn/assets/js/swiper.min.css" rel="stylesheet" type="text/css">
+  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  <script src="//swtiny.yinzhongchang.cn/assets/js/home.min.js"></script>
+  <script src="//swtiny.yinzhongchang.cn/assets/js/swiper.jquery.min.js"></script>
+   <!-- Demo styles -->
+    <style>
+    .swiper-container {
+        width: 100%;
+        position: relative;
+        height: 532px;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    </style>
+</head>
+
+<body style="background-color:#fff;">
+<!--顶部-->
+<% include header.inc.ejs %>
+<!--banner-->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+      <% for(var i=0;i<banner.length;i++){ %>
+        <div class="swiper-slide" style="width:100%;background:url('//static.yinzhongchang.cn/<%= banner[i].src %>') no-repeat;background-size:100% 100%;"></div>
+      <% } %>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Navigation -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+<!--服务项目-->
+<div class="project_bg">
+  <div class="project">
+    <ul>
+      <li>
+      <div class="proinco" id="brand"></div>
+      <p>
+      <a class="protitle">精英设计师</a>
+      <a><p>收费：150元/㎡</p>
+      <p>标签：实惠  创新  努力</p>  </a>
+      </p>
+      </li>
+      <li>
+      <div class="proinco" id="marking"></div>
+      <p>
+      <a class="protitle">高端设计师</a>
+      <a><p>收费：200元/㎡</p>
+      <p>标签：创意  精通  稳重</p> </a>
+      </p>
+      </li>
+      <li>
+      <div class="proinco" id="seo"></div>
+      <p>
+      <a class="protitle">首席设计师</a>
+      <a><p>收费：300元/㎡</p>
+      <p>标签：逼格  随和  时尚</p> </a>
+      </p>
+      </li>
+    </ul>
+  </div>
+</div>
+<!--案例展示-->
+<div class="case_bg clearfix">
+<div class="case">
+<div class="case_title"><a href="case/"><img src="//swtiny.yinzhongchang.cn/images/case_logo.jpg" alt="更多案例"></a></div>
+  <div class="case_con">
+    <ul id="da-thumbs" class="da-thumbs">
+      <% for(var i=0;i<cases.length;i++){ %>
+      <li>
+      <div class="CaseP"><img src="<%= cases[i].src %>" width="237" height="260" border="0">
+        <div class="hot_info">  </div>
+      </div>
+      <div class="CaseName"><%= cases[i].title %></div>
+      </li>
+    <% } %>
+    </ul>
+  </div>
+</div>
+</div>
+<!--客户-->
+</div>
+<!--优势-->
+<div class="advantage_bg ">
+  <div class="advantage">
+    <div class="advantage_title"></div>
+    <div class="advantage_con clearfix">
+      <ul>
+         <% for(var i=0;i<server_include.length;i++){ %>
+        <li>
+          <div class="AdCon_p"><img width="82" height="62" src="<%= server_include[i].src %>"></div>
+          <div class="AdCon_title"><%= server_include[i].title %></div>
+          <div class="AdCon_detail"><%= server_include[i].contents %></div>
+        </li>
+         <% } %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!--页脚-->
+<% include footer.inc.ejs %>
+<!--友情链接-->
+</body>
+<script>
+
+$(function(){
+      var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev'
+    });
+   
+    var list=[[8,2,3,4,'a'],[1,9,3,5,'a'],[1,2,3,7,'b','a']];
+
+    var ls=list.length;
+    var ls0=list[0].length;
+    var arr1=[];
+
+    for(var i=0;i<ls0;i++){
+
+    }
+    for(var i=1;i<ls;i++){
+       for(var j=0;j<ls0;j++){
+           var str= arrtostr(list[i]);
+           if(str.indexOf(list[0][j].toString())>0){
+
+              };
+          
+       }
+    }
+
+
+    function arrtostr(list){
+      var str='';
+      for(var i=0;i<list.length;i++){
+           str+=list[i];
+      }
+
+      return str;
+
+    }
+
+
+    $('.nav li').hover(
+      function(){
+        $(this).find('.n1').stop().animate({top:'-30px'});
+      },
+      function(){
+        $(this).find('.n1').stop().animate({top:'0px'});
+      }
+    );
+    $('.nav li').hover(
+      function(){
+        $(this).find('.n2').stop().animate({top:'-30px'});
+      },
+      function(){
+        $(this).find('.n2').stop().animate({top:'0px'});
+      }
+    );
+});
+</script>
+</html>

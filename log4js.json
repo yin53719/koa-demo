@@ -1,0 +1,19 @@
+{
+  "appenders": {
+    "loginfo": {
+      "type": "dateFile",
+      "filename": "static/logs/loginfo-",
+      "encoding": "utf-8",
+      "maxLogSize": 10,
+      "numBackups": 30,
+      "pattern": "yyyy-MM-dd.log",
+      "alwaysIncludePattern": true
+    }
+  },
+  "categories": {
+    "default": {
+      "appenders": ["loginfo"],
+      "level": "info"
+    }
+  }
+}

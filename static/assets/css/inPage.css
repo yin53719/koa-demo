@@ -1,0 +1,68 @@
+header{
+  text-align: right;
+  height: 40px;
+  line-height: 40px;
+  color: #333;
+  position: relative;
+  background: #333;
+}
+header .logo {
+  position: absolute;
+  left: 0;
+  top:0;
+  padding-left: 50px;
+  color: #fff;
+}
+header .logo span a {
+  color: #fff;
+}
+header .navbar {
+  position: absolute;
+  left: 200px;
+  top:0;
+}
+header .navbar span a{
+ color: #fff;
+}
+
+body.indexbody{
+  background:url(//img-1251334980.cossh.myqcloud.com/2-f41727dffbfb6.jpg) no-repeat;
+  background-size: 100%;
+  color: #fff;
+}
+main .Welcome{
+  text-align: center;
+  width: 100%;
+  margin-top: 10%;
+  color: #fff;
+  font-size: 30px;
+}
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  background: #333;
+}
+footer a{
+  color: #fff;
+  text-decoration: none;
+}
+.news{
+	width: 500px;
+	margin: 30px;
+}
+.newsList{
+	width: 100%;
+}
+.newsList ul li{
+	border-bottom:1px solid #ccc; 
+}
+.newsList ul li img{width:100%;}
+.newsList ul li:last-of-type{border: none}
+.newsList ul li a span{display: inline-block;padding:0 10px;text-align: center;}
+.newsList ul li a p{display: inline-block;}

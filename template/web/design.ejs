@@ -1,0 +1,58 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2">
+    <meta name="format-detection" content="telephone=no">
+    <title>上海胜微</title> 
+    <meta name="keywords" content="上海胜微文化传媒有限公司" /> 
+    <meta name="description" content="专业服务影视制作，微电影拍摄，企业广告片拍摄，动画视频制作等视频业务，也致力于互联网技术相关服务，会展服务" /> 
+	<link href="//swtiny.yinzhongchang.cn/assets/css/css.css" rel="stylesheet" type="text/css">
+	<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<style>
+	.conent img{
+		width:100%;
+	}
+  
+  </style>
+</head>
+
+<body>
+<!--顶部-->
+<% include header.inc.ejs %>
+<script type="text/javascript"> 
+	$(function(){
+		$('.nav li').hover(
+			function(){
+				$(this).find('.n1').stop().animate({top:'-30px'});
+			},
+			function(){
+				$(this).find('.n1').stop().animate({top:'0px'});
+			}
+		);
+		$('.nav li').hover(
+			function(){
+				$(this).find('.n2').stop().animate({top:'-30px'});
+			},
+			function(){
+				$(this).find('.n2').stop().animate({top:'0px'});
+			}
+		);
+	});
+
+</script>
+<!--大图展示-->
+<div class="inban"><img src="//swtiny.yinzhongchang.cn/images/ban_news.jpg"></div>
+<!--内容-->
+<div class="art_content">
+    <div class="artcon_title"><span class="RT_cn">挑选适合您的设计师</span>  <span class="RT_en">Designer</span></div>
+	<div class="art_con conent">
+		<%- about.content %>
+	</div>
+</div>
+<!--页脚-->
+<% include footer.inc.ejs %>
+</body>
+</html>
+

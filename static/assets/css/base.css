@@ -1,0 +1,26 @@
+html,body,header,footer,div,ul,li,ol,span,p,h1,h2,h3,h4,h5,h6,dl,dd,dt{
+	margin:0;
+	padding:0;
+}
+ul,li,ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.fr{
+	float: right;
+}
+.fl{
+	float: left;
+}
+.clearfix:after{
+   width:0;height: 0;display: block;clear: both;content: '';
+}
+.dn{
+	display: none;
+}
+.db{
+	display: block;
+}
+

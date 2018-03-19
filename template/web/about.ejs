@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2">
+  <meta name="format-detection" content="telephone=no">
+  <title>上海胜微</title> 
+  <meta name="keywords" content="上海胜微文化传媒有限公司" /> 
+  <meta name="description" content="专业服务影视制作，微电影拍摄，企业广告片拍摄，动画视频制作等视频业务，也致力于互联网技术相关服务，会展服务" /> 
+  <link href="//swtiny.yinzhongchang.cn/assets/css/css.css" rel="stylesheet" type="text/css">
+  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  <style>
+	.conent img{
+		width:100%;
+	}
+  
+  </style>
+</head>
+
+<body>
+<!--顶部-->
+<% include header.inc.ejs %>
+<script type="text/javascript"> 
+	$(function(){
+		$('.nav li').hover(
+			function(){
+				$(this).find('.n1').stop().animate({top:'-30px'});
+			},
+			function(){
+				$(this).find('.n1').stop().animate({top:'0px'});
+			}
+		);
+		$('.nav li').hover(
+			function(){
+				$(this).find('.n2').stop().animate({top:'-30px'});
+			},
+			function(){
+				$(this).find('.n2').stop().animate({top:'0px'});
+			}
+		);
+	});
+
+</script>
+<!--内容-->
+<div class="content">
+	<div class="con_left">
+		<div class="ConL_title">关于我们</div>
+		<div class="ConL_con">
+			<ul>
+				<li class='conL_now'>公司简介</li>
+			</ul>
+		</div>
+	</div>
+	<div class="con_right">
+		<div class="conR_title"><span><%= about.title %></span><span style="color:#dedddd; font-weight:100;">Company Profile</span></div>
+		<div class="conR_con">
+			<div style="text-align:center;"><img src="//swtiny.yinzhongchang.cn/images/about_p.jpg"></div>
+			<span style="color: rgb(60, 181, 236); font-family: 微软雅黑; font-size: 14px; font-weight: 600; line-height: 25px;">公司简介</span>
+		    <!--<h4><%= about.title %><span class="fr"><%= about.creat_time %></span></h4>-->
+			<div class="conent">
+               <%- about.content %>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<!--页脚-->
+<% include footer.inc.ejs %>
+</body>
+</html>
+

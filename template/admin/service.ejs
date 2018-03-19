@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>后台管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="//swtiny.yinzhongchang.cn/assets/umedit/themes/default/css/umeditor.css">
+    <link href="//swtiny.yinzhongchang.cn/assets/css/base.css" rel="stylesheet" type="text/css">
+    <link href="//swtiny.yinzhongchang.cn/assets/css/module.css" rel="stylesheet" type="text/css">
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.1/jquery.form.min.js" ></script>
+   <script src="//swtiny.yinzhongchang.cn/assets/js/base.js"></script>
+   <script src="//swtiny.yinzhongchang.cn/assets/umedit/third-party/template.min.js" ></script>
+   <script src="//swtiny.yinzhongchang.cn/assets/umedit/umeditor.config.js" ></script>
+   <script src="//swtiny.yinzhongchang.cn/assets/umedit/umeditor.js" ></script>
+   <script src="//swtiny.yinzhongchang.cn/assets/umedit/lang/zh-cn/zh-cn.js" ></script>
+</head> 
+</head>
+<body>
+<div class="pageWrapper">
+
+  <% include header.inc.ejs %>
+
+  <div class="container">
+    <% include navbar.inc.ejs %>
+    <div class="main">
+        <div class="area-title">
+          <h2>服务范围</h2>
+        </div>
+        <div style="padding:10px 20px;">
+          <div class="Gform">
+            <form name="form" id="formDemo" >
+                <input type="hidden" name="modules" value="<%= about.modules %>">
+                <ul>
+                    <li class="Gname">
+                        <label>标题 </label>
+                    </li>
+                    <li class="Ginput">
+                      <input type="text" name="title" value="<%= about.title %>">
+                    </li>
+                </ul>
+                 <ul>
+                    <li class="Gname">
+                       <label>内容 </label>
+                    </li>
+                    <li class="Guemit">
+                        <script type="text/plain" id="myEditor" name="myEditor" style="width:400px;height:200px;">
+                        <%- about.content %>
+                    </script>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="Gsubmit"><a href="javascript:void(0)" class="submit btn">提交</a> </li>
+                </ul>
+           </form>
+          </div>
+          
+       </div>
+    </div>      
+  </div>
+</div>
+</body> 
+ <script type="text/javascript">
+  $(function(){
+
+       var um = UM.getEditor('myEditor');
+
+
+
+       $('.submit').click(function(){
+            var modules=$('[name=modules]').val();
+            var title=$('[name=title]').val();
+            var content=um.getContent();
+            var creat_time=new Date().getTime();
+
+            $.ajax({
+                type:'put',
+                url:'/admin/service',
+                data:{
+                    modules:modules,title:title,content:content,creat_time:creat_time
+                },
+                success:function(data){
+                    if(data.status==0){
+                    alert('修改成功');
+                    window.location=window.location;
+                    }
+                }
+            });
+
+            
+            
+       });
+   
+       
+
+
+
+
+  });
+
+
+
+
+ </script>  
+
+</html>

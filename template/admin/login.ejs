@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>威马汽车</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="/static/fonts-googleapis.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/static/bootstrap.min.css" type="text/css" media="screen" title="no title">
+    <link href="/static/components.min.css" rel="stylesheet" id="style_components" type="text/css">
+    <link href="/static/login.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/login.css" rel="stylesheet" type="text/css">
+    <% include top.inc.ejs %>
+</head>
+<body class=" login">
+    <!-- BEGIN LOGO -->
+    <div class="logo"><a></a></div>
+    <!-- END LOGO -->
+    <!-- BEGIN LOGIN -->
+    <div class="content"> 
+        <!-- BEGIN LOGIN FORM -->
+            <h3 class="form-title">欢迎登录</h3>
+            <!-- <div class="alert alert-danger ">
+                <span> 错误提示消息 区域</span>
+            </div> -->
+        <form action="/api/login" method="post" enctype="application/x-www-form-urlencoded">
+            <div class="form-group">
+                <label class="control-label visible-ie8 visible-ie9">用户名</label>
+                <div class="input-icon">
+                <i class="ba ba-icon-user"></i>
+                <input class="form-control placeholder-no-fix" type="text"  placeholder="请输入用户名" name="username" > 
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">密码</label>
+                <div class="input-icon">
+                <i class="ba ba-icon-password"></i>
+                <input class="form-control form-control-solid placeholder-no-fix" type="password"  placeholder="请输入密码" name="password"> </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit"  class="btn red uppercase">登录</button>
+            </div>
+        </form>
+            <div class="form-actions">
+                <!-- <a href="#" onclick="findPassword()" class="forget-password">忘记密码?</a> -->
+            </div>
+    </div>
+
+    <div class="login-footer">
+        <div class="footer-info" align="center">
+                威马汽车技术有限公司 Copyright © 2017,WELTMEISTER All Rights Reserved
+        </div>
+    </div>
+</body>
+<script>
+
+    $(function(){
+        
+    });
+</script>
+</html>

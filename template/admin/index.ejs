@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>后台管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//swtiny.yinzhongchang.cn/assets/css/base.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/module.css" rel="stylesheet" type="text/css">
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.1/jquery.form.min.js" ></script>
+   <script src="//swtiny.yinzhongchang.cn/assets/js/base.js"></script>
+ 
+</head>
+<body>
+<div class="pageWrapper">
+
+  <% include header.inc.ejs %>
+
+  <div class="container">
+    <% include navbar.inc.ejs %>
+    <div class="main">
+        <div class="area-title">
+          <h2>首页</h2>
+        </div>
+        <!--<div class="menus">
+          <ul>
+            <li>
+              <a class="btn" href="./news">创建</a>
+              <a class="btn"  href="javascript:void(0)" >修改</a>
+              <a class="btn"  href="javascript:void(0)">删除</a>
+            </li>
+          </ul>
+        </div>-->
+        <div style="padding:10px 20px;">
+          <div class="Gform">
+            
+            <ul>
+              <li class="Gname"><label for="">首页轮播图 </label> </li>
+              <form name="form" id="banner" action="/api/upload/banner" method="post" enctype="multipart/form-data"><li class="Gimage banner_file"><div>
+                <ul>
+                  <% for(var i=0;i<banner.length;i++){ %>
+                  <li class="img"><img src="//static.yinzhongchang.cn/<%= banner[i].src %>" alt=""><i attr-id="<%= banner[i].id %>">+</i></li>
+                  <% } %>
+                  <li class="file <% if(banner.length==8){  %> dn <% } %>"><span title="1600*532">点击上传图片(1600*532)</span><input type="file"  name ="file"accept="image/gif,image/jpeg,image/png,image/jpg,image/bmp"></li>
+                </ul>
+                </div>
+              </li></form> 
+           </ul>
+           <ul>
+              <li class="Gname"><label for="">添加案例 </label> </li>
+             <form name="form" id="cases" action="/api/upload/image" method="post" enctype="multipart/form-data"> <li class="Gimage case_file"><div>
+                <ul>
+                  <% for(var i=0;i<cases.length;i++){ %>
+                  <li class="img">
+                    <img src="<%= cases[i].src %>" alt=""><i attr-id="<%= cases[i].id %>">+</i>
+                    <p style="width:100;margin-top:10px;"><%= cases[i].title %></p>
+                  </li>
+                  <% } %>
+                   <li class="img add dn">
+                    <img src="" alt="">
+                    <p style="width:100;margin-top:10px;"><input type="text" name="add_title" value="" style="width:100%;"></p>
+                  </li>
+
+
+                  <li class="file"><span>点击上传图片(237*260)</span><input type="file" name ="file"accept="image/gif,image/jpeg,image/png,image/jpg,image/bmp">
+                  <p style="width:100;margin-top:10px;"></p></li>
+                  <li class="add" style="margin-top:30px;"> <a class="btn case-add" href="javascript:void(0)">添加</a></li>
+                
+                </ul>
+                </div> 
+              </li></form> 
+           </ul>
+                      <ul>
+              <li class="Gname"><label for="">服务范围 </label> </li>
+             <form name="form" id="server_include" action="/api/upload/image" method="post" enctype="multipart/form-data"> <li class="Gimage server_include"><div>
+                <ul>
+                  <% for(var i=0;i<server_include.length;i++){ %>
+                  <li class="img">
+                    <img src="<%= server_include[i].src %>" alt=""><i attr-id="<%= server_include[i].id %>">+</i>
+                    <p style="width:100;margin-top:10px;"><%= server_include[i].title %></p>
+                    <p style="width:100;margin-top:10px;"><%= server_include[i].contents %></p>
+                  </li>
+                  <% } %>
+                   <li class="img add dn">
+                    <img src="" alt="">
+                    <p style="width:100;margin-top:10px;"><input type="text" name="add_title" value="" style="width:100%;"></p>
+                    <p style="width:100;margin-top:10px;"><textarea name="contents"  style="width:100%;height:100px;"></textarea></p>
+                  </li>
+
+
+                  <li class="file"><span>点击上传图片(82*62)</span><input type="file" name ="file"accept="image/gif,image/jpeg,image/png,image/jpg,image/bmp">
+                  <p style="width:100;margin-top:10px;"></p></li>
+                  <li class="add" style="margin-top:30px;"> <a class="btn case-add" href="javascript:void(0)">添加</a></li>
+                
+                </ul>
+                </div> 
+              </li></form> 
+           </ul>
+           
+          </div>
+          
+
+
+
+        <!--<table class="Gtable">
+          <thead>
+            <tr>
+              <th><input type="checkbox"></th>
+              <th>序号</th>
+              <th>标题</th>
+              <th>创建时间</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="x in news_lists">
+              <td><input type="checkbox"></td>
+              <td>{{ x.id }}</td>
+              <td>{{ x.creat_time }}</td>
+              <td>{{ x.title }}</td>
+              <td><a href="./news"><span v-on:click="modify(x.id)">修改</span></a><a href="./news" ><span v-on:click="remove(x.id)">删除</span></a></td>
+            </tr>
+          </tbody>
+        </table>-->
+       </div>
+    </div>      
+  </div>
+</div>
+</body> 
+ <script type="text/javascript">
+  $(function(){
+   $('.banner_file input[name=file]').change(function(){
+     $("#banner").ajaxSubmit({
+        success: function (data) {
+            if(data.status==0){
+              alert('上传成功');
+              window.location=window.location;
+            }
+        },
+        error: function (error) {
+            console.log(error);
+        }
+
+    });
+       
+   });
+
+   $('.banner_file .img i').on('click',function(){
+       var id=$(this).attr('attr-id');
+        $.ajax({
+          url:'/api/upload/banner/'+id,
+          type:'DELETE',
+          success:function(data){
+            if(data.status==0){
+              alert('删除成功');
+              window.location=window.location;
+            }
+          }
+        });
+   });
+
+   $('.case_file .file input[name=file]').change(function(){
+     $("#cases").ajaxSubmit({
+        success: function (data) {
+          if(data.success){
+           $('.case_file .img.add img').attr('src','//static.yinzhongchang.cn/'+data.url);
+           $('.case_file .img.add').removeClass('dn');
+           $('.case_file .file').addClass('dn');
+          }
+        },
+        error: function (error) {
+            console.log(error);
+        }
+
+    });
+       
+   });
+   $('.server_include .file input[name=file]').change(function(){
+     $("#server_include").ajaxSubmit({
+        success: function (data) {
+          if(data.success){
+           $('.server_include .img.add img').attr('src','//static.yinzhongchang.cn/'+data.url);
+           $('.server_include .img.add').removeClass('dn');
+           $('.server_include .file').addClass('dn');
+          }
+        },
+        error: function (error) {
+            console.log(error);
+        }
+
+    });
+       
+   });
+   $('.server_include .img i').on('click',function(){
+       var id=$(this).attr('attr-id');
+        $.ajax({
+          url:'/api/server_include/'+id,
+          type:'DELETE',
+          success:function(data){
+            if(data.status==0){
+              alert('删除成功');
+              window.location=window.location;
+            }
+          }
+        });
+   });
+
+   $('.case_file .img i').on('click',function(){
+       var id=$(this).attr('attr-id');
+        $.ajax({
+          url:'/api/upload/cases/'+id,
+          type:'DELETE',
+          success:function(data){
+            if(data.status==0){
+              alert('删除成功');
+              window.location=window.location;
+            }
+          }
+        });
+   });
+$('.case_file .add a.case-add').on('click',function(){
+       var id=$(this).attr('attr-id');
+       var src=$('.case_file .img.add img').attr('src');
+       if(!src){
+          alert('请先添加图片');
+          return false;
+       }
+       var title=$('.case_file .img input[name=add_title]').val();
+       if(!title){
+          alert('请输入标题');
+          return false;
+       }
+        $.ajax({
+          url:'/api/upload/cases',
+          type:'post',
+          data:{
+            title:title,
+            src:src
+          },
+          success:function(data){
+            if(data.status==0){
+              alert('添加成功');
+              window.location=window.location;
+            }
+          }
+        });
+   });
+
+$('.server_include .add a.case-add').on('click',function(){
+       var id=$(this).attr('attr-id');
+       var src=$('.server_include .img.add img').attr('src');
+       if(!src){
+          alert('请先添加图片');
+          return false;
+       }
+       var title=$('.server_include .img input[name=add_title]').val();
+       if(!title){
+          alert('请输入标题');
+          return false;
+       }
+        var contents=$('.server_include .img textarea[name=contents]').val();
+       if(!contents){
+          alert('请输入内容');
+          return false;
+       }
+        $.ajax({
+          url:'/api/server_include',
+          type:'post',
+          data:{
+            title:title,
+            src:src,
+            contents:contents
+          },
+          success:function(data){
+            if(data.status==0){
+              alert('添加成功');
+              window.location=window.location;
+            }
+          }
+        });
+   });
+
+   
+
+
+
+  });
+
+
+
+
+ </script>  
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html><head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+	<title>Register</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% include top.inc.ejs %>
+    <link href="//swtiny.yinzhongchang.cn/assets/css/login.css" rel="stylesheet" type="text/css">
+
+</head>
+<body class="templatemo-bg-gray">
+</div>
+	<div class="container">
+		<div class="col-md-12">
+			<h1 class="margin-bottom-15">Register Form</h1>
+			<form class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form" action="/login" method="post">
+		        <div class="form-group">
+		          <div class="col-xs-12">
+		            <div class="control-wrapper">
+		            	<label for="username" class="control-label fa-label"><i class="fa fa-user"></i></label>
+		            	<input class="form-control" name="username" placeholder="Username" type="text">
+		            </div>
+		          </div>
+		        </div>
+		        <div class="form-group">
+		          <div class="col-md-12">
+		          	<div class="control-wrapper">
+		            	<label for="password" class="control-label fa-label"><i class="fa fa-lock"></i></label>
+		            	<input class="form-control" name="password"  placeholder="Password" type="password">
+		            </div>
+		          </div>
+		        </div>
+            <div class="form-group">
+		          <div class="col-md-12">
+		          	<div class="control-wrapper">
+						<a class="btn btn-info submit" style="color:#fff;">Log in</a>
+		          </div>
+		        </div>
+		      </form>
+		</div>
+	</div>
+
+</body>
+<script>
+
+$(function(){
+
+    $('.submit').click(function(){
+        if(!$('[name=username]').val()){
+            alert('用户名不可为空');
+            return false;
+        }
+        if(!$('[name=password]').val()){
+            alert('密码不可为空');
+            return false;
+        }
+
+        $.post('/sadmin/register',{username:$('[name=username]').val(),password:$('[name=password]').val()}).success(function(data){
+            if(data.ok){
+                alert(data.msg);
+                window.location.href="/admin/";
+            }else{
+                alert(data.msg);
+            }
+
+		});
+
+
+
+    });
+
+
+    
+
+
+
+});
+
+
+
+</script>
+
+</html>

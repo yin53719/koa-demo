@@ -1,0 +1,23 @@
+<div class="sidebar">
+    <div class="menu">
+      <dl class="menu-list">
+          <dd <% if (nav_now=='index') { %> class="act" <% } %> ><a class="menu-lv2" data-event="nav" href="/admin/"><span>首页</span></a> </dd>
+          <dd <% if (nav_now=='design') { %> class="act" <% } %> ><a class="menu-lv2" data-event="nav" href="/admin/design"><span>拍摄团队</span></a></dd>
+          <dd <% if (nav_now=='service') { %> class="act" <% } %> ><a class="menu-lv2" data-event="nav" href="/admin/service"><span>服务范围</span></a> </dd>
+          <dd <% if (nav_now=='about') { %> class="act" <% } %> ><a class="menu-lv2" data-event="nav" href="/admin/about"><span>联系我们</span></a> </dd>
+          <!-- <dd <% if (nav_now=='index') { %> class="nav_now" <% } %> >
+            <a class="menu-lv2" href="javascript:void(0);" data-event="sidebar_accordion"> <span>新闻中心</span>
+           <i class="white-down-icon">开</i>
+            </a>-->
+            <!--<ul class="menu-sub">
+                <li><a class="menu-lv3" data-event="nav" href="javascript:void(0)"><i class="ico-dot"></i><span>基础数据统计</span></a>
+                </li>
+                <li><a class="menu-lv3 act" data-event="nav" href="javascript:void(0)"><i class="ico-dot"></i><span>返回码统计</span></a>
+                </li>
+                </ul>
+            </dd> -->
+         
+         </dl>
+  </div>
+  <a class="btn-fold-menu" title="收起" data-event="toggle_sidebar">收起</a>
+</div>
