@@ -147,6 +147,10 @@ router.get('/getMenuList/vue',async (ctx)=>{
                 redirect:'noredirect',
                 
             }
+            
+            obj['hidden']=hidden;
+
+            
             array.push(obj);
           
        }
@@ -160,10 +164,12 @@ router.get('/getMenuList/vue',async (ctx)=>{
                       children:[],
                       path:newV.path,
                       meta:{
-                        icon:newV.icon,
                         title:newV.title
                       },
                       component:newV.component
+                  }
+                  if(newV.icon){
+                    obj.meta.icon=newV.icon;
                   }
                   array[j].children.push(obj);
             }
@@ -180,10 +186,12 @@ router.get('/getMenuList/vue',async (ctx)=>{
                             children:[],
                             path:newV.path,
                             meta:{
-                                icon:newV.icon,
                                 title:newV.title
                             },
                             component:newV.component
+                        }
+                        if(newV.icon){
+                           obj.meta.icon=newV.icon;
                         }
                         array[h].children[k].children.push(obj);
                     }
