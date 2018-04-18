@@ -19,7 +19,11 @@ router.post('/image',async (ctx)=>{
     result = await uploadFile( ctx,{
         path:serverFilePath
     });
-    let src=result.name;
+    let src='https://static.yinzhongchang.cn/'+result.name;
+    result.url=src;
+    result.files={
+        file:src
+    }
     let sql = `UPDATE tmp SET src='${src}' WHERE id='1'`;
     let results = await query.selectAllData(sql);
     //要上传文件的本地路径

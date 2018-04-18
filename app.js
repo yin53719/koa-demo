@@ -7,7 +7,7 @@ const views = require('koa-views');
 var session = require('koa-session');
 (function (){
   app.keys=[];
-  for(var i=0;i<100000;i++){
+  for(var i=0;i<100;i++){
     app.keys[i]='a_'+Math.random();
   }
 })();
@@ -48,6 +48,6 @@ app.use(router.routes()).use(router.allowedMethods());
 
 app.use(convert(static('./static')));
 
-const port=4000;
+const port=5000;
 app.listen(port);
 console.log('service start ok'+port);
