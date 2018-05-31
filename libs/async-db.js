@@ -1,9 +1,10 @@
 const mysql = require('mysql')
 const pool = mysql.createPool({
   host     : '118.25.66.58',
+  port     : '10010',
   user     : 'yinzc',
   password : 'Yinzc53719.',
-  database : 'swtiny'
+  database : 'testdb1'
 });
 const log4js = require('koa-log4');
 let query = function( sql, values ) {
