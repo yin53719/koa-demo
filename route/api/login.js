@@ -21,7 +21,7 @@ router.post('/',async (ctx)=>{
       ctx.body={ok:false,msg:'密码不可为空'};
     }
     password=common.md5(password+common.MD5_SUFFIX);
-     let sql = `SELECT id,username,password,avatar FROM user WHERE username='${username}'`;
+     let sql = `SELECT id,username,password,avatar FROM tc_users WHERE username='${username}'`;
       let result = await query.selectAllData(sql)
       if(result.length==0){
              ctx.body={ok:false,msg:'此用户不存在'};
