@@ -46,7 +46,7 @@ router.get('/user/info',async (ctx)=>{
         roles:["admin"],
         token:'admin'
     }
-    let sql = `SELECT * FROM tc_menu_copy`;
+    let sql = `SELECT * FROM tc_menus`;
     let result = await query.selectAllData(sql)
     var array=[];
     for(var i=0;i<result.length;i++){
