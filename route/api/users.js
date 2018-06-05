@@ -10,9 +10,9 @@ router.get('/list',async (ctx)=>{
     let page=common.getUrlparms(ctx.url,'page');
     let limit=common.getUrlparms(ctx.url,'limit');
     let spage=(page-1)*10;
-    let sql = `SELECT a.username as name,sex,age,birth,addr,id  FROM user as a WHERE a.username LIKE '%${username}%' limit ${spage},${limit}`;
+    let sql = `SELECT a.username as name,sex,age,birth,addr,id  FROM tc_users as a WHERE a.username LIKE '%${username}%' limit ${spage},${limit}`;
     let users = await query.selectAllData(sql);
-    let total = await query.selectAllData(`SELECT count(username) as total FROM user WHERE username LIKE '%${username}%'`);
+    let total = await query.selectAllData(`SELECT count(username) as total FROM tc_users WHERE username LIKE '%${username}%'`);
     ctx.body={total:total[0].total,users:users};
 })
 router.post('/',async (ctx)=>{
