@@ -11,4 +11,4 @@ RUN npm install
 #对外暴露的端口
 EXPOSE 5000
 #程序启动脚本
-RUN node app.js
+RUN nohup node app.js &
