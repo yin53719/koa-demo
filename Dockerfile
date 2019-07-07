@@ -1,5 +1,5 @@
 #制定node镜像的版本
-FROM node:10
+FROM node:10.16.0
 #声明作者
 MAINTAINER robin
 #移动当前目录下面的文件到app目录下
